@@ -9,17 +9,27 @@
 <body>
     <!--Navbar-->
     <nav class="navbar">
-        <a href="#">Search</a>
-        <a href="#weather-container">Weather</a>
-        <a href="#about-container">About</a>
-        <a href="#footer-container">Footer</a>
+        <div class="navbar-menu">
+            <a href="#">Search</a>
+            <a href="#weather-container">Weather</a>
+            <a href="#about-container">About</a>
+            <a href="#footer-container">Footer</a>
+        </div>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
 
     <!--Search bar-->
     <div id="search-div" class="search-div">
         <input class="search-bar" placeholder="Enter a city name"/>
-        <button class="realtime-data-btn" id="realtime-data-btn">Realtime Data</button>
-        <button class="forecast-btn" id="forecast-btn">Week Forcast</button>
+        <div>
+            <button class="realtime-data-btn" id="realtime-data-btn">Realtime Data</button>
+            <button class="forecast-btn" id="forecast-btn">Week Forcast</button>
+        </div>
     </div>
 
     <!--Temperature toggle button -->

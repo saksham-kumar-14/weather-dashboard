@@ -13,6 +13,14 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// hamburger styling
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbar-menu");
+hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+})
+
 // Search functionality
 const searchInput = document.querySelector(".search-bar");
 const realTimeBtn = document.querySelector(".realtime-data-btn");
