@@ -1,0 +1,199 @@
+* {
+    margin:0;
+    padding:0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #1E3E62;
+}
+
+/* go to top button*/
+.to-top {
+    background: #dc7029;
+    position: fixed;
+    bottom: 16px;
+    right:32px;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:32px;
+    text-decoration: none;
+    opacity:0;
+    pointer-events: none;
+    transition: all .4s;
+    color: white;
+}
+.to-top.active {
+    bottom:32px;
+    pointer-events: auto;
+    opacity:1;
+}.to-top:hover{
+    background: #FF6500;
+}
+
+/*navbar*/
+
+.navbar{
+    position: sticky;
+    top: 0;
+    background-color: #0B192C;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.navbar a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    background-color: inherit;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+}
+  
+.navbar a:hover {
+    background-color: #FF6500;
+}
+
+/*search div*/
+.search-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}.search-div input{
+    width: 60%;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    display: flex;
+    border: solid #dc7029 3px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+}.search-div input::placeholder{
+    color: rgb(186, 186, 186);
+}.search-div button{
+    font-weight: bold;
+    width: 15%;
+    background: linear-gradient(45deg, #ec5934, #feb47b);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+}#forecast-btn:hover{
+    transform: translateY(-5px);
+}#realtime-data-btn:hover{
+    transform: translateY(-5px);
+}
+
+/*footer*/
+.footer-container{
+    grid: 3;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    background-color: #0B192C;
+    border-top: solid #ECDFCC 1px;
+}
+.footer-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.footer-text p{
+    font-size: 13px;
+    padding: 12px;
+}.footer-text h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.footer-links img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+/*about*/
+.about-container h2{
+    font-size: 50px;
+}
+.about-container{
+    background-color: #0e1b2f;
+    border-top: solid #ECDFCC 1px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);;
+}.about-container img{
+    width: 250px;
+    height: 250px;
+}.about-img-container{
+    display: flex;align-items: center;justify-content: center;
+}
+
+/*Mesage area*/
+.weather-container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.temp-toggle-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px;
+}.temp-toggle-subcontainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #0B192C;
+}.temp-toggle-btn{
+    width: 50%;
+    height: 100%;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #dc7029;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}.temp-toggle-btn:hover{
+    background-color: #ff6600;
+}#message{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 12px;
+    font-size: 18px;
+}#message div{
+    padding: 12px 24px;
+}
