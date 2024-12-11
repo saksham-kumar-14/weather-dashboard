@@ -183,7 +183,6 @@ body{
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: top;
-    overflow-y: auto;
 }
 .temp-toggle-container{
     display: flex;
@@ -215,6 +214,7 @@ body{
     grid-template-columns: repeat(4, 1fr);
     padding: 12px;
     font-size: 18px;
+    overflow-y: auto;
 }#message div{
     padding: 12px 24px;
 }
@@ -261,10 +261,8 @@ body{
         height: 40vh;
     }
     #message{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         padding: 4px;
         font-size: 15px;
     }

@@ -84,11 +84,11 @@ const printForcast = (data) => {
         date.innerHTML = `Date: ${e.date}`;
         if(temp_c){
             maxtemp.innerHTML = `Max Temp: ${e.day.maxtemp_c} C`;
-            mintemp.innerHTML = `Max Temp: ${e.day.mintemp_c} C`;
+            mintemp.innerHTML = `Min Temp: ${e.day.mintemp_c} C`;
             avgtemp.innerHTML = `Avg Temp: ${e.day.avgtemp_c} C`;
         }else{
             maxtemp.innerHTML = `Max Temp: ${e.day.maxtemp_f} F`;
-            mintemp.innerHTML = `Max Temp: ${e.day.mintemp_f} F`;
+            mintemp.innerHTML = `Min Temp: ${e.day.mintemp_f} F`;
             avgtemp.innerHTML = `Avg Temp: ${e.day.avgtemp_f} F`;
         }
         windSpeed.innerHTML = `Max wind speed: ${e.day.maxwind_mph} mph`;
