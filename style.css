@@ -1,7 +1,6 @@
 * {
     margin:0;
     padding:0;
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -11,6 +10,7 @@ html {
 
 body{
     background-color: #1E3E62;
+    color: white;
 }
 
 /* go to top button*/
@@ -210,10 +210,18 @@ body{
 }.temp-toggle-btn:hover{
     background-color: #ff6600;
 }#message{
+    background-color: white;
+    color: black;
+    opacity: 0.5;
+    width: 80%;
+    height: 100%;
+    border-radius: 16px;
+    backdrop-filter: blur(10px) saturate(70%);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 12px;
     font-size: 18px;
+    margin: 16px;
     overflow-y: auto;
 }#message div{
     padding: 12px 24px;

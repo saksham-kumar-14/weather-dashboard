@@ -35,6 +35,7 @@ const printRealtime = (data) =>{
     let conditionIcon = data.current.condition.icon;
     conditionIcon = conditionIcon.slice(2, conditionIcon.length);
     document.getElementById("weather-container").style.backgroundImage = `url('https://${conditionIcon}')`
+    document.getElementById("weather-container").style.backgroundPosition = "center";
 
     let container = document.createElement("div");
     let time = document.createElement("p");
