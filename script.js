@@ -26,6 +26,7 @@ const searchInput = document.querySelector(".search-bar");
 const realTimeBtn = document.querySelector(".realtime-data-btn");
 const ForecastBtn = document.querySelector(".forecast-btn");
 const msg = document.getElementById("message");
+const msgTitle = document.getElementById("message-title");
 let temp_c = true;
 let current_location = false;
 let realtime = true;
@@ -39,7 +40,6 @@ const printRealtime = (data) =>{
 
     let container = document.createElement("div");
     let time = document.createElement("p");
-    let location = document.createElement("p");
     let current = document.createElement("p");
     let windSpeed = document.createElement("p");
     let humidity = document.createElement("p");
@@ -47,7 +47,7 @@ const printRealtime = (data) =>{
     let temp = document.createElement("p");
 
     time.innerHTML = `Time: ${data.location.localtime}`
-    location.innerHTML = `Location: ${data.location.name}, ${data.location.region}, ${data.location.country}
+    msgTitle.innerHTML = `Location: ${data.location.name}, ${data.location.region}, ${data.location.country}
     (Lat: ${data.location.lat}, Lon: ${data.location.lon})`;
     current.innerHTML = `Condition: ${data.current.condition.text}`
     windSpeed.innerHTML = `Wind Speed: ${data.current.wind_mph} mph`;
@@ -59,8 +59,9 @@ const printRealtime = (data) =>{
         temp.innerHTML = `Temperature: ${data.current.temp_f} F`
     }
 
-    let list = [time, location, current, windSpeed, humidity, pressure, temp];
+    let list = [time, current, windSpeed, humidity, pressure, temp];
     list.map((e)=>{
+        e.className = "weather-info"
         container.appendChild(e);
     });
     msg.appendChild(container);
@@ -68,10 +69,8 @@ const printRealtime = (data) =>{
 
 const printForcast = (data) => {
     document.getElementById("weather-container").style.backgroundImage = `url('assets/about-img.png')`
-    let head = document.createElement("p");
-    head.innerHTML = `Location: ${data.location.name}, ${data.location.region}, ${data.location.country}
+    msgTitle.innerHTML = `Location: ${data.location.name}, ${data.location.region}, ${data.location.country}
     (Lat: ${data.location.lat}, Lon: ${data.location.lon})`;
-    msg.appendChild(head);
     data.forecast.forecastday.map((e)=>{
         let child = document.createElement("div");
         let date = document.createElement("p");
@@ -98,6 +97,7 @@ const printForcast = (data) => {
 
         let list = [date, maxtemp, mintemp, avgtemp, windSpeed, humidity, current];
         list.map((e)=>{
+            e.className = "weather-info"
             child.appendChild(e);
         })
 
@@ -120,6 +120,7 @@ const FetchRealtime = (location, days) => {
         current_location = false;
         console.error(err);
         msg.innerHTML = "No such city found";
+        msgTitle.innerHTML = "";
         document.getElementById("weather-container").style.backgroundImage = 'none'
     });
 }
